@@ -30,7 +30,7 @@ class SkyroomAPI(object):
     def __str__(self):
         return "skyroom.SkyroomAPI({!s})".format(self.apikey)
 
-    def _request(self, action, params=None):
+    def _request(self, action, params=None, **requests_kwargs):
         url = 'https://' + self.host + '/skyroom/api/' + self.apikey
         data = {
             'action': action
@@ -38,7 +38,7 @@ class SkyroomAPI(object):
         if params:
             data['params'] = params
         try:
-            content_data = requests.post(url, headers=self.headers, auth=None, json=data).content
+            content_data = requests.post(url, headers=self.headers, auth=None, json=data, **requests_kwargs).content
             try:
                 response = json.loads(content_data.decode("utf-8"))
                 if (response['ok'] == True):
@@ -60,67 +60,67 @@ class SkyroomAPI(object):
 
     # 2.Rooms Management
 
-    def getRooms(self, params=None):
-        return self._request('getRooms', params)
+    def getRooms(self, params=None, **requests_kwargs):
+        return self._request('getRooms', params, **requests_kwargs)
 
-    def countRooms(self, params=None):
-        return self._request('countRooms', params)
+    def countRooms(self, params=None, **requests_kwargs):
+        return self._request('countRooms', params, **requests_kwargs)
 
-    def getRoom(self, params=None):
-        return self._request('getRoom', params)
+    def getRoom(self, params=None, **requests_kwargs):
+        return self._request('getRoom', params, **requests_kwargs)
 
-    def getRoomUrl(self, params=None):
-        return self._request('getRoomUrl', params)
+    def getRoomUrl(self, params=None, **requests_kwargs):
+        return self._request('getRoomUrl', params, **requests_kwargs)
 
-    def createRoom(self, params=None):
-        return self._request('createRoom', params)
+    def createRoom(self, params=None, **requests_kwargs):
+        return self._request('createRoom', params, **requests_kwargs)
 
-    def updateRoom(self, params=None):
-        return self._request('updateRoom', params)
+    def updateRoom(self, params=None, **requests_kwargs):
+        return self._request('updateRoom', params, **requests_kwargs)
 
-    def deleteRoom(self, params=None):
-        return self._request('deleteRoom', params)
+    def deleteRoom(self, params=None, **requests_kwargs):
+        return self._request('deleteRoom', params, **requests_kwargs)
 
-    def getRoomUsers(self, params=None):
-        return self._request('getRoomUsers', params)
+    def getRoomUsers(self, params=None, **requests_kwargs):
+        return self._request('getRoomUsers', params, **requests_kwargs)
 
-    def addRoomUsers(self, params=None):
-        return self._request('addRoomUsers', params)
+    def addRoomUsers(self, params=None, **requests_kwargs):
+        return self._request('addRoomUsers', params, **requests_kwargs)
 
-    def removeRoomUsers(self, params=None):
-        return self._request('removeRoomUsers', params)
+    def removeRoomUsers(self, params=None, **requests_kwargs):
+        return self._request('removeRoomUsers', params, **requests_kwargs)
 
-    def updateRoomUser(self, params=None):
-        return self._request('updateRoomUser', params)
+    def updateRoomUser(self, params=None, **requests_kwargs):
+        return self._request('updateRoomUser', params, **requests_kwargs)
 
     # 3. Users Management
 
-    def getUsers(self, params=None):
-        return self._request('getUsers', params)
+    def getUsers(self, params=None, **requests_kwargs):
+        return self._request('getUsers', params, **requests_kwargs)
 
-    def countUsers(self, params=None):
-        return self._request('countUsers', params)
+    def countUsers(self, params=None, **requests_kwargs):
+        return self._request('countUsers', params, **requests_kwargs)
 
-    def getUser(self, params=None):
-        return self._request('getUser', params)
+    def getUser(self, params=None, **requests_kwargs):
+        return self._request('getUser', params, **requests_kwargs)
 
-    def createUser(self, params=None):
-        return self._request('createUser', params)
+    def createUser(self, params=None, **requests_kwargs):
+        return self._request('createUser', params, **requests_kwargs)
 
-    def updateUser(self, params=None):
-        return self._request('updateUser', params)
+    def updateUser(self, params=None, **requests_kwargs):
+        return self._request('updateUser', params, **requests_kwargs)
 
-    def deleteUser(self, params=None):
-        return self._request('deleteUser', params)
+    def deleteUser(self, params=None, **requests_kwargs):
+        return self._request('deleteUser', params, **requests_kwargs)
 
-    def getUserRooms(self, params=None):
-        return self._request('getUserRooms', params)
+    def getUserRooms(self, params=None, **requests_kwargs):
+        return self._request('getUserRooms', params, **requests_kwargs)
 
-    def addUserRooms(self, params=None):
-        return self._request('addUserRooms', params)
+    def addUserRooms(self, params=None, **requests_kwargs):
+        return self._request('addUserRooms', params, **requests_kwargs)
 
-    def removeUserRooms(self, params=None):
-        return self._request('removeUserRooms', params)
+    def removeUserRooms(self, params=None, **requests_kwargs):
+        return self._request('removeUserRooms', params, **requests_kwargs)
 
-    def getLoginUrl(self, params=None):
-        return self._request('getLoginUrl', params)
+    def getLoginUrl(self, params=None, **requests_kwargs):
+        return self._request('getLoginUrl', params, **requests_kwargs)
