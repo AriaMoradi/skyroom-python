@@ -45,8 +45,7 @@ class SkyroomAPI(object):
                     response = response['result']
                 else:
                     raise APIException(
-                        (u'APIException[error_code: %s]: %s' % (
-                            response['error_code'], response['error_message']))
+                        (f'APIException[error_code: {response["error_code"]}]: {response["error_message"]}')
                     )
             except ValueError as e:
                 raise HTTPException(e)
