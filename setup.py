@@ -2,8 +2,6 @@ from setuptools import setup
 import sys
 
 requires = ['requests>=2.22.0']
-if sys.version_info < (2, 6):
-    requires.append('simplejson')
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -11,7 +9,7 @@ with open("README.md", "r") as fh:
 setup(
     name="skyroom",
     py_modules=['skyroom'],
-    version="1.0.0",
+    version="1.0.1",
     description="Skyroom Python library",
     long_description=long_description,
     long_description_content_type="text/markdown",

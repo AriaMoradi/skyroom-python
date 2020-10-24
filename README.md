@@ -2,7 +2,7 @@
 
 A library to ease skyroom api usage.
 
-Link to api documentation: <a href="https://data.skyroom.online/help/webservice.html">Skyroom RESTful API Documention</a>
+Link to api documentation: [Skyroom RESTful API Documention](https://data.skyroom.online/help/webservice.html) 
 
 
 ## Installation
