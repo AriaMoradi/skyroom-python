@@ -6,22 +6,17 @@ Link to api documentation: <a href="https://data.skyroom.online/help/webservice.
 
 
 ## Installation
-<p> You can install this SDK from pypi through below command </p>
-
+You can install this SDK from pypi through the command below
 
 ```
 pip install skyroom
 ```
-You can download the Python SDK <a href="https://github.com/KaveNegar/kavenegar-python/blob/master/kavenegar.py">Here</a> too
-<p>
-Then ,You need to make crate an account on Skyroom from <a href="https://www.skyroom.online/signup">Here</a>
-</p>
-<p>
-After that you just need to ask for API-KEY from skyroom support.
+
+In order to use the api you need an API key. To obtain one you need to create an account on [Skyroom](https://www.skyroom.online/signup) and ask for your API key from the skyroom support.
 
 ## Usage
 
-Here are some examples for api usage.
+Here are some examples for api usage(all methods use the same signature).
 
 ### getRooms
 ```python
@@ -68,8 +63,9 @@ except HTTPException as e:
 ```
 
 # Contribution
-Bug fixes, docs, and enhancements are welcome! please open an issue.
+I no longer use this library in my code. If there are any updates on the upstream from skyroom you can add support for it by opening a pull request.
 
+Anyways, Bug fixes, docs, and enhancements are allways welcome! just open an issue.
 
 
 
