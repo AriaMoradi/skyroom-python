@@ -15,7 +15,7 @@ class HTTPException(Exception):
 
 
 class SkyroomAPI(object):
-    def __init__(self, apikey):
+    def __init__(self, apikey, **request_kwargs):
         self.host = 'www.skyroom.online'
         self.apikey = apikey
         self.headers = {
@@ -23,6 +23,7 @@ class SkyroomAPI(object):
             'Content-Type': 'application/json',
             'charset': 'utf-8'
         }
+        self.request_kwargs = request_kwargs
 
     def __repr__(self):
         return "skyroom.SkyroomAPI({!r})".format(self.apikey)
@@ -38,15 +39,14 @@ class SkyroomAPI(object):
         if params:
             data['params'] = params
         try:
-            content_data = requests.post(url, headers=self.headers, auth=None, json=data).content
+            content_data = requests.post(url, headers=self.headers, auth=None, json=data, **self.request_kwargs).content
             try:
                 response = json.loads(content_data.decode("utf-8"))
                 if (response['ok'] == True):
                     response = response['result']
                 else:
                     raise APIException(
-                        (u'APIException[error_code: %s]: %s' % (
-                            response['error_code'], response['error_message'])).encode('utf-8')
+                        (f'APIException[error_code: {response["error_code"]}]: {response["error_message"]}')
                     )
             except ValueError as e:
                 raise HTTPException(e)
