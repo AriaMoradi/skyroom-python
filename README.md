@@ -54,7 +54,7 @@ try:
         "room_id": 1,
         "language": "fa"
     }
-    response = api.getRoom(params)
+    response = api.getRoomUrl(params)
     print(response)
 except APIException as e: 
     print(e)
