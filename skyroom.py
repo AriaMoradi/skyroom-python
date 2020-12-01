@@ -1,9 +1,7 @@
+import json
+
 import requests
 
-try:
-    import json
-except ImportError:
-    import simplejson as json
 
 
 class APIException(Exception):
